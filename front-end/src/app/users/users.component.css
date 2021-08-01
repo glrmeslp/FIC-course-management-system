@@ -1,0 +1,20 @@
+.example-container {
+  position: relative;
+  min-height: 200px;
+}
+
+.example-table-container {
+  position: relative;
+  /* max-height: 400px; */
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-header-cell {
+  background-color: #0f6955;
+  color: white;
+  font-size: 15px;
+}
