@@ -1,0 +1,66 @@
+
+<div style="margin-right:1%; margin-left:1%;">
+  <p>form-user works!</p>
+    
+  <mat-card>
+  <h1>{{titleU}}</h1>
+  <form id="userForm" [formGroup]="userForm" (submit)="registerUser()">
+
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput #name maxlength="50" placeholder="Placeholder" formControlName="name">
+            
+            <mat-hint align="end">{{name.value.length}} / 50 </mat-hint>
+            <mat-icon *ngIf="userForm.get('name')?.valid" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-icon *ngIf="userForm.get('name')?.invalid" matSuffix>mood_bad</mat-icon>
+            <mat-error *ngIf="userForm.get('name')?.errors?.required">You must enter a value</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput #username maxlength="30" placeholder="Placeholder" formControlName="username">
+            <mat-hint align="end">{{username.value.length}} / 30 </mat-hint>
+            <mat-icon *ngIf="userForm.get('username')?.valid" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-icon *ngIf="userForm.get('username')?.invalid" matSuffix>mood_bad</mat-icon>
+        <mat-error *ngIf="userForm.get('username')?.errors?.required">You must enter a value</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput #email maxlength="40" placeholder="Placeholder" formControlName="email">
+            <mat-hint align="end">{{email.value.length}} / 40 </mat-hint>
+            
+            <mat-icon *ngIf="userForm.get('email')?.valid" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-icon *ngIf="userForm.get('email')?.invalid" matSuffix>mood_bad</mat-icon>
+            <mat-error *ngIf="userForm.get('email')?.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+
+     <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput #password maxlength="20" [type]="hide ? 'password' : 'text'" formControlName="password">
+            <mat-hint align="end">{{password.value.length}} / 20 </mat-hint>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="userForm.get('username')?.errors?.required">You must enter at least 8 caracteres</mat-error>
+        </mat-form-field>
+    </div>
+
+    <section>
+      <div >
+        <button class="button-confirm-user" type="submit" [disabled]="userForm.invalid" mat-raised-button>{{titleU}}</button>
+      </div>
+    </section>
+
+  </form>
+
+  </mat-card>
+  
+</div>

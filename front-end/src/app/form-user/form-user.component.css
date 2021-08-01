@@ -1,0 +1,23 @@
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  mat-form-field.mat-form-field {
+    font-size: 16px;
+    display:flex;
+    width:max-content;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+.button-confirm-user {
+    background-color: #0f6955;
+    color:#FFF;
+}
