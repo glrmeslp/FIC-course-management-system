@@ -6,16 +6,23 @@ import { UsersComponent } from './users/users.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialAngular } from 'src/app/shared/styles/material-angular.module';
+import { FormUserComponent } from './form-user/form-user.component';
+import { AppRoutingModule } from './app.routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    FormUserComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialAngular
+    MaterialAngular,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
