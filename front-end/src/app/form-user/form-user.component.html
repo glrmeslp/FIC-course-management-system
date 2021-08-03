@@ -1,7 +1,6 @@
 
 <div style="margin-right:1%; margin-left:1%;">
-  <p>form-user works!</p>
-    
+   
   <mat-card>
   <h1>{{titleU}}</h1>
   <form id="userForm" [formGroup]="userForm" (submit)="registerUser()">
@@ -55,7 +54,7 @@
 
     <section>
       <div >
-        <button class="button-confirm-user" type="submit" [disabled]="userForm.invalid" mat-raised-button>{{titleU}}</button>
+        <button class="button-confirm-user" type="submit" [disabled]="userForm.invalid" mat-raised-button>Done</button>
       </div>
     </section>
 

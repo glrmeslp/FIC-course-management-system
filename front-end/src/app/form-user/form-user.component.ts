@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { User } from '../user';
 import { USERS } from './../mock-users';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-user',
@@ -14,9 +14,12 @@ export class FormUserComponent implements OnInit {
   userForm: FormGroup;
   hide = true;
   titleU = "Register" ;
+  userId: string = "";
+  
 
   constructor(private formBuilder:FormBuilder,
-    private router: Router) 
+    private router: Router,
+    private route: ActivatedRoute )
     { 
     this.userForm = this.formBuilder.group({
       name: ['',[Validators.required,Validators.maxLength(50)]],
@@ -27,6 +30,11 @@ export class FormUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.userId = this.route.snapshot.params.id;
+
+    if(this.userId != undefined){
+      this.titleU = "Edit User" ;
+    }
   }
 
   registerUser() {

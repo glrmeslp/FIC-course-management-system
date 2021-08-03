@@ -11,7 +11,7 @@ export class UsersComponent implements OnInit {
 
   addUserButtonText = '';
   public isMobile = false;
-  displayedColumns: string[] = ['ID', 'Name', 'Username', 'Ações'];
+  displayedColumns: string[] = ['ID', 'Name', 'Username', 'Email', 'Actions'];
   users = USERS
 
   constructor(
@@ -27,7 +27,7 @@ export class UsersComponent implements OnInit {
         this.addUserButtonText = '';
       } else {
         // tslint:disable-next-line: quotemark
-        this.addUserButtonText = "Cadastrar USER";
+        this.addUserButtonText = "Register user";
       }
     });
   }
