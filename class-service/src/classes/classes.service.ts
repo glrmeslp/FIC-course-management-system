@@ -8,11 +8,8 @@ import { Class, ClassDocument } from './schemas/class.schema';
 @Injectable()
 export class ClassesService {
 
-  constructor(@InjectModel(Class.name) private classModel: Model<ClassDocument>,
-  @InjectConnection() private connection: Connection) {
-    connection.set('useFindAndModify', false);
+  constructor(@InjectModel(Class.name) private classModel: Model<ClassDocument>) {
   }
-
 
   async create(createClassDto: CreateClassDto): Promise<Class> {
     const createdClass = new this.classModel(createClassDto);
@@ -28,8 +25,7 @@ export class ClassesService {
   }
 
   update(id: string, updateClassDto: UpdateClassDto) {
-    const updatedClass = new this.classModel(updateClassDto);
-    return this.classModel.findByIdAndUpdate(id,{ $set : {updatedClass}});
+    return this.classModel.findByIdAndUpdate(id,updateClassDto,{"new":true});
   }
 
   remove(id: string) {
