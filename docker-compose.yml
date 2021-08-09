@@ -1,9 +1,33 @@
 version: "3"
 
 services:
+  nestjs-backend:
+    container_name: nestjs_back_end
+    image: fic_course/backend
+    build: 
+      context: ./back-end
+      dockerfile: Dockerfile
+    command: npm start
+    ports: 
+      - 3000:3000
+    networks:
+      - production-network
+    volumes:
+      - ./back-end:/app
+    restart: unless-stopped
+    depends_on: 
+      - mongodb
+      
   mongodb:
     image: mongo:latest
     environment:
       - MONGODB_DATABASE="FIC-course"
     ports:
       - 27017:27017
+    networks:
+      - production-network
+  
+
+networks: 
+  production-network:
+    driver: bridge

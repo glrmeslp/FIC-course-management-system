@@ -9,7 +9,7 @@ import { ClassesModule } from './classes/classes.module';
   imports: [
     MongooseModule.forRootAsync({
       useFactory: () => ({
-        uri: 'mongodb://localhost:27017/FIC-course'
+        uri: 'mongodb://mongodb:27017/FIC-course'
       }),
     }),
     ClassesModule],
