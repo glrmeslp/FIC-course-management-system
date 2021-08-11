@@ -10,7 +10,7 @@ import { FicCourseModule } from './fic-course/fic-course.module';
   imports: [
     MongooseModule.forRootAsync({
       useFactory: () => ({
-        uri: 'mongodb://localhost:27017/FIC-course'
+        uri: 'mongodb://mongodb:27017/FIC-course'
       }),
     }),
     ClassesModule,
