@@ -1,8 +1,13 @@
 FROM node:14.15.4-alpine3.12
 
+
 RUN apk add --no-cache bash
 
 RUN npm i -g @nestjs/cli@8.0.0
+
+COPY package*.json ./
+
+RUN npm install --save @nestjs/mongoose mongoose
 
 ENV DOCKERIZE_VERSION v0.6.1
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
@@ -12,3 +17,5 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 USER node
 
 WORKDIR /home/node/app
+
+ENTRYPOINT ["./.docker/entrypoint.sh"]
