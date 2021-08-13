@@ -1,15 +1,21 @@
-FROM node:14.17.4 
-
-ENV NODE_ENV=development
-
-WORKDIR /app
-
-COPY ["package.json", "package-lock.json*", "./"]
+FROM node:14.15.4-alpine3.12
 
 
-RUN npm install glob rimraf
-RUN npm install
+RUN apk add --no-cache bash
 
-COPY . /app
+RUN npm i -g @nestjs/cli@8.0.0
 
-RUN npm run build
+COPY package*.json ./
+
+RUN npm install --save @nestjs/mongoose mongoose
+
+ENV DOCKERIZE_VERSION v0.6.1
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+
+USER node
+
+WORKDIR /home/node/app
+
+ENTRYPOINT ["./.docker/entrypoint.sh"]
