@@ -9,6 +9,7 @@ import { MaterialAngular } from 'src/app/shared/styles/material-angular.module';
 import { FormUserComponent } from './form-user/form-user.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ClassesRoutingModule } from './modules/classes/classes-routing.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialAngular,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClassesRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
