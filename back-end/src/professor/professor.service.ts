@@ -21,7 +21,7 @@ export class ProfessorService {
     return this.professor_model.find().exec();
   }
 
-  async findOne(id: string):Promise<Professor[]>{
+  async findOne(id: string):Promise<Professor>{
     return this.professor_model.findById(id).exec();
   }
 
@@ -29,7 +29,7 @@ export class ProfessorService {
     return this.professor_model.findByIdAndUpdate(id,updateProfessorDto);
   }
 
-  async remove(id: string):Promise<Professor[]> {
+  async remove(id: string):Promise<Professor> {
     return this.professor_model.findByIdAndDelete(id).exec();
 
   }
