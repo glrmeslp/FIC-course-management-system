@@ -10,11 +10,11 @@ const routes: Routes = [
   {path: 'users', component: UsersComponent },
   {path: 'register-user', component: FormUserComponent },
   {path: 'edit-user/:id', component: FormUserComponent },
-  {
-    path: 'classes',
-    pathMatch: 'full',
-    redirectTo: 'classes'
-  },
+  // {
+  //   path: 'classes',
+  //   pathMatch: 'full',
+  //   redirectTo: 'classes'
+  // },
   {
   path: 'classes',
     loadChildren: () => import('./modules/classes/classes.module').then(m => m.ClassesModule)
