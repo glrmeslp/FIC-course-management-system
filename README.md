@@ -3,11 +3,11 @@
 ## TEAM
 
 |Nome|Matricula|Api|
-|-|-|
-|GUILHERME DE SOUSA PEIXOTO| 2019003074 |  |
-|KEVEN LUCAS PAIVA DE PAULA| 201903083 |  |
-|MARIO GUILHERME CARVALHO| 2019007940 |  |
-|REBECA CANCELLI ARCHER PINTO| 2019003181 |  |
+|-|-|-|
+|GUILHERME DE SOUSA PEIXOTO| 2019003074 | Turma(classes) |
+|KEVEN LUCAS PAIVA DE PAULA| 201903083 | Professor(professor) |
+|MARIO GUILHERME CARVALHO| 2019007940 | Aluno(fic-student) |
+|REBECA CANCELLI ARCHER PINTO| 2019003181 | CursoFic(fic-course) |
 
 ### TECHNOLOGIES USED
 *back-end: [NEST.JS](https://nestjs.com/)
@@ -29,7 +29,7 @@ $ cd FIC-course-management-system
 There is a docker-compose.yml file for starting Docker.
 
 ```bash
-$ docker-compose up
+$ docker-compose up --build
 ```
 
 After running the sample, you can stop the Docker container with
