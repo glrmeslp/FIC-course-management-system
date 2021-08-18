@@ -16,7 +16,7 @@ export class ClassesService {
       name: createClassDto.name,
       startDate: createClassDto.startDate,
       endDate: createClassDto.endDate,
-      teacher: createClassDto.teacher,
+      professor: createClassDto.professorId,
       ficCourse: createClassDto.ficCourseId
     });
     try {
@@ -30,7 +30,10 @@ export class ClassesService {
   async findAll() {
     let classes: Class[];
     try {
-      classes = await this.classModel.find().populate('ficcourses').exec();
+      classes = await this.classModel.find()
+      .populate('ficCourse')
+      .populate('professor')
+      .exec();
 
       let response;
       if (classes.length > 0) {

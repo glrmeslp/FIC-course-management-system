@@ -2,6 +2,6 @@ export class CreateClassDto {
     readonly name: string;
     readonly startDate: Date;
     readonly endDate: Date;
-    readonly teacher: string;
+    readonly professorId: string;
     readonly ficCourseId: string;
 }

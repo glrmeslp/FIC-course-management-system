@@ -3,7 +3,7 @@ import { FicCourseService } from './fic-course.service';
 import { CreateFicCourseDto } from './dto/create-fic-course.dto';
 import { UpdateFicCourseDto } from './dto/update-fic-course.dto';
 
-@Controller('fic-course')
+@Controller('api/fic-course')
 export class FicCourseController {
   constructor(private readonly ficCourseService: FicCourseService) {}
 

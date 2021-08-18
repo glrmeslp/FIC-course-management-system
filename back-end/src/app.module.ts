@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClassesModule } from './classes/classes.module';
 import { FicCourseModule } from './fic-course/fic-course.module';
+import { FicStudentModule } from './fic-student/fic-student.module';
+import { ProfessorModule } from './professor/professor.module';
 
 
 @Module({
@@ -14,7 +16,9 @@ import { FicCourseModule } from './fic-course/fic-course.module';
       }),
     }),
     ClassesModule,
-    FicCourseModule],
+    FicCourseModule,
+    FicStudentModule,
+    ProfessorModule],
   controllers: [AppController],
   providers: [AppService],
 })
