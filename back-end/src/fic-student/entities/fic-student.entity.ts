@@ -6,13 +6,14 @@ export type FicStudentDocument = FicStudent & Document;
 
 @Schema()
 export class FicStudent {
+   
     @Prop({ required: true })
 
-    name: string;
+    name_student: string;
 
     @Prop({ required: true })
 
-    matricula: string;
+    registration_student: string;
 }
 
-export  const  CatSchema  = SchemaFactory.createForClass(FicStudent);
+export  const  FicStudentSchema  = SchemaFactory.createForClass(FicStudent)
