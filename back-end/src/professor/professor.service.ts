@@ -21,15 +21,15 @@ export class ProfessorService {
     return this.professor_model.find().exec();
   }
 
-  async findOne(id: number):Promise<Professor[]>{
+  async findOne(id: string):Promise<Professor[]>{
     return this.professor_model.findById(id).exec();
   }
 
-  async update(id: number, updateProfessorDto: UpdateProfessorDto) {
+  async update(id: string, updateProfessorDto: UpdateProfessorDto) {
     return this.professor_model.findByIdAndUpdate(id,updateProfessorDto);
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     return this.professor_model.findByIdAndDelete(id).exec();
 
   }
