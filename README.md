@@ -10,8 +10,8 @@
 |REBECA CANCELLI ARCHER PINTO| 2019003181 | CursoFic(fic-course) |
 
 ### TECHNOLOGIES USED
-*back-end: [NEST.JS](https://nestjs.com/)
-*front-end: [ANGULAR](https://angular.io/)
+* back-end: [NEST.JS](https://nestjs.com/)
+* front-end: [ANGULAR](https://angular.io/)
 
 
 ## REQUIREMENTS 
