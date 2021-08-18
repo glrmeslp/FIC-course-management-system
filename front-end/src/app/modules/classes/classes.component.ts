@@ -1,3 +1,4 @@
+import { ClassInterface } from './../../interfaces/class-interface';
 import { ClassesService } from './../../services/classes.service';
 import { classesInterface } from './../../interfaces/classes-interface';
 import { Observable } from 'rxjs';
@@ -17,6 +18,9 @@ export class ClassesComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['name', 'startDate', 'endDate', 'teacher', 'ficCourse'];
   listAllClasses$: Observable<any>;
+  dataSource: MatTableDataSource<ClassInterface>
+
+  totalCount: number;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -37,11 +41,13 @@ export class ClassesComponent implements OnInit, AfterViewInit {
   listAllClasses() {
     this.listAllClasses$ = this.classesService.listAllClasses().pipe(
       map((classes: classesInterface) => {
+        this.totalCount = classes.data.length
+        this.dataSource = new MatTableDataSource(classes.data)
         return classes.data;
       }), catchError((err: any, caught: Observable<any>) => {
         return caught
       }));
-      console.log(this.listAllClasses$)
+
   }
 
 }

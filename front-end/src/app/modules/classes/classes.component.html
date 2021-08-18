@@ -32,23 +32,23 @@
 
     <ng-container matColumnDef="startDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.startDate  | date: 'dd/MM/yyyy'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="endDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> End Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.endDate  | date: 'dd/MM/yyyy'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="teacher">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Professor </th>
-      <td mat-cell *matCellDef="let element"> {{element.teacher}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.professor.name_professor}} </td>
     </ng-container>
 
 
     <ng-container matColumnDef="ficCourse">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Fic Course </th>
-      <td mat-cell *matCellDef="let element"> {{element.ficCourse}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.ficCourse.name_course}} </td>
     </ng-container>
 
 
@@ -63,7 +63,7 @@
 
 
   </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  <mat-paginator [length]="totalCount" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
   </article>
 </section>
 </body>
