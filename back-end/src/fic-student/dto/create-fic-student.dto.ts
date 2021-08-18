@@ -1,1 +1,3 @@
-export class CreateFicStudentDto {}
+export class CreateFicStudentDto {
+    readonly name_student: string;
+}
