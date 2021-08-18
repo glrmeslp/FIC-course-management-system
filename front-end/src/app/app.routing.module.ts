@@ -9,8 +9,16 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'users'},
   {path: 'users', component: UsersComponent },
   {path: 'register-user', component: FormUserComponent },
-  {path: 'edit-user/:id', component: FormUserComponent }
-];
+  {path: 'edit-user/:id', component: FormUserComponent },
+  {
+    path: 'classes',
+    pathMatch: 'full',
+    redirectTo: 'classes'
+  },
+  {
+  path: 'classes',
+    loadChildren: () => import('./modules/classes/classes.module').then(m => m.ClassesModule)
+  }];
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
