@@ -29,7 +29,7 @@ export class ProfessorService {
     return this.professor_model.findByIdAndUpdate(id,updateProfessorDto);
   }
 
-  async remove(id: string) {
+  async remove(id: string):Promise<Professor[]> {
     return this.professor_model.findByIdAndDelete(id).exec();
 
   }
