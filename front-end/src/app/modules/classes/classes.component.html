@@ -23,7 +23,7 @@
   </header>
   <article>
 
-  <table mat-table [dataSource]="dataSource" matSort>
+  <table mat-table [dataSource]="listAllClasses$ | async" multiTemplateDataRows matSort>
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
@@ -54,6 +54,12 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">
+        <div style="color:#0F6955">Não encontramos a sua busca na base de dados.</div>
+      </td>
+    </tr>
 
 
   </table>
