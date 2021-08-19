@@ -9,10 +9,12 @@
 |MARIO GUILHERME CARVALHO| 2019007940 | Aluno(fic-student) |
 |REBECA CANCELLI ARCHER PINTO| 2019003181 | CursoFic(fic-course) |
 
+### CLASS DIAGRAM
+![diagram](diagramaDeClasses.png)
+
 ### TECHNOLOGIES USED
 * back-end: [NEST.JS](https://nestjs.com/)
 * front-end: [ANGULAR](https://angular.io/)
-
 
 ## REQUIREMENTS 
 This project requires docker and docker-compose.
