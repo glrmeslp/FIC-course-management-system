@@ -30,6 +30,7 @@ There is a docker-compose.yml file for starting Docker.
 
 ```bash
 $ docker-compose up --build
+
 ```
 
 After running the sample, you can stop the Docker container with
