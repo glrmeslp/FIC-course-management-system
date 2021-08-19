@@ -40,8 +40,8 @@ After running the sample, you can stop the Docker container with
 ```bash
 $ docker-compose down
 ```
-Acess [http://localhost:3000/classes](http://localhost:3000/classes) to acess Turma(classes)
-Acess [http://localhost:3000/professor](http://localhost:3000/professor) to acess Professor(professor)
-Acess [http://localhost:3000/fic-student](http://localhost:3000/fic-student) to acess Aluno(fic-student)
-Acess [http://localhost:3000/fic-course](http://localhost:3000/fic-course) to acess CursoFic(fic-course)
+* Acess [http://localhost:3000/classes](http://localhost:3000/classes) to acess Turma(classes)
+* Acess [http://localhost:3000/professor](http://localhost:3000/professor) to acess Professor(professor)
+* Acess [http://localhost:3000/fic-student](http://localhost:3000/fic-student) to acess Aluno(fic-student)
+* Acess [http://localhost:3000/fic-course](http://localhost:3000/fic-course) to acess CursoFic(fic-course)
 
