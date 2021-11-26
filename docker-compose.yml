@@ -12,13 +12,10 @@ services:
 
   app: 
     build:  ./back-end
-    command: dockerize -wait tcp://mongodb:27017 -timout 40s
-    #entrypoint: ["./.docker/entrypoint.sh"]
-    container_name: apizao
+    container_name: fic-api
     ports:
         - 3000:3000
-    volumes: 
-        - ./back-end:/home/node/app
+    command: npm run start
     networks:
       - production-network
     depends_on: 
